@@ -1,0 +1,97 @@
+import React, { useState } from 'react';
+import './style.css'; // Make sure to import your stylesheet
+
+const LoginPage = () => {
+  const [isSignUp, setIsSignUp] = useState(false);
+
+  const handleToggle = () => {
+    setIsSignUp(!isSignUp);
+  };
+
+  return (
+    <div className={`container ${isSignUp ? 'active' : ''}`}>
+      <div className="form-container sign-up">
+        <form>
+          <h1>Créer un Compte</h1>
+          {/* ... (rest of the sign-up form) */}
+        </form>
+      </div>
+      <div className="form-container sign-in">
+        <form>
+          <h1>Se Connecter</h1>
+          {/* ... (rest of the sign-in form) */}
+        </form>
+      </div>
+      <div className="toggle-container">
+        <div className="toggle">
+          <div className={`toggle-panel ${isSignUp ? 'toggle-left' : 'toggle-right'}`}>
+            {isSignUp ? (
+              <>
+                <h1>De Retour !</h1>
+                <p>Entrez vos coordonnées personnelles pour utiliser toutes les fonctionnalités du site</p>
+                <button className="hidden" onClick={handleToggle}>Se Connecter</button>
+              </>
+            ) : (
+              <>
+                <h1>Bonjour, Ami !</h1>
+                <p>Inscrivez-vous avec vos coordonnées personnelles pour utiliser toutes les fonctionnalités du site</p>
+                <button className="hidden" onClick={handleToggle}>S'inscrire</button>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginPage;
+*************************************************************En français*********************************************
+import React, { useState } from 'react';
+import './style.css'; // Assurez-vous d'importer votre feuille de style
+
+const PageConnexion = () => {
+  const [inscriptionActive, setInscriptionActive] = useState(false);
+
+  const basculerFormulaire = () => {
+    setInscriptionActive(!inscriptionActive);
+  };
+
+  return (
+    <div className={`container ${inscriptionActive ? 'active' : ''}`}>
+      <div className="form-container sign-up">
+        <form>
+          <h1>Créer un Compte</h1>
+          {/* ... (reste du formulaire d'inscription) */}
+        </form>
+      </div>
+      <div className="form-container sign-in">
+        <form>
+          <h1>Se Connecter</h1>
+          {/* ... (reste du formulaire de connexion) */}
+        </form>
+      </div>
+      <div className="toggle-container">
+        <div className="toggle">
+          <div className={`toggle-panel ${inscriptionActive ? 'toggle-left' : 'toggle-right'}`}>
+            {inscriptionActive ? (
+              <>
+                <h1>De Retour !</h1>
+                <p>Entrez vos coordonnées personnelles pour utiliser toutes les fonctionnalités du site</p>
+                <button className="hidden" onClick={basculerFormulaire}>Se Connecter</button>
+              </>
+            ) : (
+              <>
+                <h1>Bonjour, Ami !</h1>
+                <p>Inscrivez-vous avec vos coordonnées personnelles pour utiliser toutes les fonctionnalités du site</p>
+                <button className="hidden" onClick={basculerFormulaire}>S'inscrire</button>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PageConnexion;
