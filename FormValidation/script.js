@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const form = document.getElementById('mainForm');
+    const form = document.querySelector('.mainForm');
     const name = document.getElementById('name');
     const email = document.getElementById('email');
     const phone = document.getElementById('phone');
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         return isValid;
-
     }
 
     function validateField(input, condition, errorMessage) {
@@ -62,17 +61,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function setError(input, message) {
         const formControl = input.parentElement;
-        const icon = formControl.querySelector('.icon');
+        const icon = formControl.querySelector('.icone');
         formControl.className = 'form-control error';
-        icon.className = 'icon fas fa-times-circle';
+        icon.className = 'icone fas fa-times-circle';
         input.placeholder = message;
     }
 
     function setSuccess(input) {
         const formControl = input.parentElement;
-        const icon = formControl.querySelector('.icon');
+        const icon = formControl.querySelector('.icone');
         formControl.className = 'form-control success';
-        icon.className = 'icon fas fa-check-circle';
+        icon.className = 'icone fas fa-check-circle';
     }
 
     function isEmail(email) {
